@@ -1,0 +1,101 @@
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: inherit;
+    filter: blur(44px);
+    z-index: 0;
+    transition: filter 0.6s;
+}
+
+body.unblur::before {
+    filter: blur(8px);
+}
+
+.card {
+    position: relative;
+    background: rgba(0, 0, 0, 0.65);
+    border-radius: 16px;
+    box-shadow:
+        0 0 60px 20px #ffffff7c,
+        0 0 40px 10px #ffffff71,
+        0 8px 40px 0 rgba(31, 38, 135, 0.25);
+    padding: 32px 40px;
+    text-align: center;
+    color: #fff;
+    min-width: 400px;
+    z-index: 1;
+    filter: blur(8px);
+    transition: filter 0.6s;
+}
+
+body.unblur .card {
+    filter: blur(0);
+}
+
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    margin-bottom: 16px;
+    border: 3px solid #fff;
+}
+
+.links {
+    margin-top: 18px;
+}
+
+.links a {
+    color: #ffb347;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+    transition: color 0.2s;
+}
+
+.links a:hover {
+    color: #fff;
+}
+
+#cover-btn {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.7);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    z-index: 10;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.4s;
+}
+
+#cover-btn span {
+    font-weight: 900;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+}
+
+#typewriter {
+    min-height: 2em;
+    font-size: 1.2rem;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
